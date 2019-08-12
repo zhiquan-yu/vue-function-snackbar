@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div v-if="showing" class="snackbar" @click="handleClick">
+    <slot />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import useToast from './useToast'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  name: 'Snackbar',
+
+  props: {
+    show: Boolean,
+  },
+
+  setup(props, context) {
+    const { emit } = context
+
+    function emitHide() {
+      emit('hide')
+    }
+
+    function emitClick() {
+      emit('click')
+    }
+
+    const { showing } = useToast(props, emitHide, 5000)
+
+    return {
+      showing,
+
+      handleClick() {
+        emitClick()
+
+        showing.value = false
+      },
+    }
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.snackbar {
+  position: fixed;
+  z-index: var(--vue-snacker-z-index, 100);
 }
 </style>
