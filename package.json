@@ -1,7 +1,6 @@
 {
-  "name": "vue-snackbar",
+  "name": "vue-function-snackbar",
   "version": "0.1.0",
-  "private": true,
   "main": "src/App.vue",
   "peerDependencies": {
     "vue": "^2.6.10",

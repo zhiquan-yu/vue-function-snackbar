@@ -1,4 +1,4 @@
-# vue-snackbar
+# vue-function-snackbar
 
 A snackbar component based on [vue-function-api](https://github.com/vuejs/vue-function-api)
 
@@ -13,7 +13,7 @@ A snackbar component based on [vue-function-api](https://github.com/vuejs/vue-fu
 
 <script>
 import { value } from 'vue-function-api'
-import Snackbar from 'vue-snackbar'
+import Snackbar from 'vue-function-snackbar'
 
 export default {
   name: 'YourApp',
