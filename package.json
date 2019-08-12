@@ -1,9 +1,15 @@
 {
   "name": "vue-function-snackbar",
+  "description": "A snackbar component based on vue-function-api",
+  "keywords": ["snackbar", "vue", "vue3", "vue-function-api"],
   "version": "0.1.0",
   "main": "src/App.vue",
   "peerDependencies": {
     "vue": "^2.6.10",
     "vue-function-api": "^2.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhiquan-yu/vue-snackbar.git"
   }
 }
